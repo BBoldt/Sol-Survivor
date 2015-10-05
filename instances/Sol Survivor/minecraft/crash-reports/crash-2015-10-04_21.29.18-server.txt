@@ -1,0 +1,166 @@
+---- Minecraft Crash Report ----
+// Why did you do that?
+
+Time: 10/4/15 9:29 PM
+Description: Exception ticking world
+
+java.lang.NullPointerException: Exception ticking world
+	at codechicken.lib.world.WorldExtensionManager$WorldExtensionEventHandler.onChunkUnLoad(WorldExtensionManager.java:66)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler_435_WorldExtensionEventHandler_onChunkUnLoad_Unload.invoke(.dynamic)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:54)
+	at cpw.mods.fml.common.eventhandler.EventBus.post(EventBus.java:140)
+	at net.minecraft.world.chunk.Chunk.func_76623_d(Chunk.java:941)
+	at net.minecraft.world.gen.ChunkProviderServer.func_73156_b(ChunkProviderServer.java:342)
+	at net.minecraft.world.WorldServer.func_72835_b(WorldServer.java:165)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:625)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:547)
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:111)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:427)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:685)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at codechicken.lib.world.WorldExtensionManager$WorldExtensionEventHandler.onChunkUnLoad(WorldExtensionManager.java:66)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler_435_WorldExtensionEventHandler_onChunkUnLoad_Unload.invoke(.dynamic)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:54)
+	at cpw.mods.fml.common.eventhandler.EventBus.post(EventBus.java:140)
+	at net.minecraft.world.chunk.Chunk.func_76623_d(Chunk.java:941)
+	at net.minecraft.world.gen.ChunkProviderServer.func_73156_b(ChunkProviderServer.java:342)
+	at net.minecraft.world.WorldServer.func_72835_b(WorldServer.java:165)
+
+-- Affected level --
+Details:
+	Level name: New World
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 362 Drop: 106
+	Level seed: -7066185238487289188
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (-204,64,256), Chunk: (at 4,4,0 in -13,16; contains blocks -208,0,256 to -193,255,271), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 69 game time, 69 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 64946 (now: false), thunder time: 112276 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:625)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:547)
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:111)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:427)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:685)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_60, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 619967056 bytes (591 MB) / 1464860672 bytes (1397 MB) up to 1908932608 bytes (1820 MB)
+	JVM Flags: 3 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xms512m -Xmx2048m
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1517 46 mods loaded, 46 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forge-1.7.10-10.13.4.1517-1.7.10-universal.jar) 
+	UCHIJAAAA	Forge{10.13.4.1517} [Minecraft Forge] (forge-1.7.10-10.13.4.1517-1.7.10-universal.jar) 
+	UCHIJAAAA	appliedenergistics2-core{rv2-stable-10} [AppliedEnergistics2 Core] (minecraft.jar) 
+	UCHIJAAAA	CodeChickenCore{1.0.6.43} [CodeChicken Core] (minecraft.jar) 
+	UCHIJAAAA	ivtoolkit{IvToolkit} [1.2] (minecraft.jar) 
+	UCHIJAAAA	Micdoodlecore{} [Micdoodle8 Core] (minecraft.jar) 
+	UCHIJAAAA	NotEnoughItems{1.0.4.107} [Not Enough Items] (NotEnoughItems-1.7.10-1.0.4.107-universal.jar) 
+	UCHIJAAAA	appliedenergistics2{rv2-stable-10} [Applied Energistics 2] (appliedenergistics2-rv2-stable-10.jar) 
+	UCHIJAAAA	bdlib{1.9.3.107} [BD Lib] (bdlib-1.9.3.107-mc1.7.10.jar) 
+	UCHIJAAAA	IC2{2.2.780-experimental} [IndustrialCraft 2] (industrialcraft-2-2.2.780-experimental.jar) 
+	UCHIJAAAA	Forestry{3.6.0.594-unstable} [Forestry for Minecraft] (forestry_1.7.10-3.6.0.594-unstable.jar) 
+	UCHIJAAAA	BinnieCore{2.0-pre14} [Binnie Core] (binnie-mods-2.0-pre14.jar) 
+	UCHIJAAAA	Botany{2.0-pre14} [Botany] (binnie-mods-2.0-pre14.jar) 
+	UCHIJAAAA	ExtraBees{2.0-pre14} [Extra Bees] (binnie-mods-2.0-pre14.jar) 
+	UCHIJAAAA	ExtraTrees{2.0-pre14} [Extra Trees] (binnie-mods-2.0-pre14.jar) 
+	UCHIJAAAA	Genetics{2.0-pre14} [Genetics] (binnie-mods-2.0-pre14.jar) 
+	UCHIJAAAA	ForgeMultipart{1.2.0.345} [Forge Multipart] (ForgeMultipart-1.7.10-1.2.0.345-universal.jar) 
+	UCHIJAAAA	chisel{2.9.1.7} [Chisel] (Chisel-2.9.1.7.jar) 
+	UCHIJAAAA	BuildMod{v1.0} [Build Mod] (coroutil-1.1.3 for MC v1.7.10.jar) 
+	UCHIJAAAA	CoroPets{v1.0} [CoroPets] (coroutil-1.1.3 for MC v1.7.10.jar) 
+	UCHIJAAAA	CoroAI{v1.0} [CoroAI] (coroutil-1.1.3 for MC v1.7.10.jar) 
+	UCHIJAAAA	ExtendedRenderer{v1.0} [Extended Renderer] (coroutil-1.1.3 for MC v1.7.10.jar) 
+	UCHIJAAAA	ConfigMod{v1.0} [Extended Mod Config] (coroutil-1.1.3 for MC v1.7.10.jar) 
+	UCHIJAAAA	endercore{1.7.10-0.1.0.24_beta} [EnderCore] (EnderCore-1.7.10-0.1.0.24_beta.jar) 
+	UCHIJAAAA	EnderIO{1.7.10-2.3.0.415_beta} [Ender IO] (EnderIO-1.7.10-2.3.0.415_beta.jar) 
+	UCHIJAAAA	enviromine{1.3.122} [EnviroMine] (EnviroMine-1.3.122.jar) 
+	UCHIJAAAA	GalacticraftCore{3.0.12} [Galacticraft Core] (GalacticraftCore-1.7-3.0.12.357.jar) 
+	UCHIJAAAA	GalacticraftMars{3.0.12} [Galacticraft Planets] (Galacticraft-Planets-1.7-3.0.12.357.jar) 
+	UCHIJAAAA	gendustry{1.6.0.125} [GenDustry] (gendustry-1.6.0.125-mc1.7.10.jar) 
+	UCHIJAAAA	HardcoreQuesting{The Journey (4.2.4)} [Hardcore Questing Mode] (HQM-The Journey (4.2.4).jar) 
+	UCHIJAAAA	Mekanism{8.1.7} [Mekanism] (Mekanism-1.7.10-8.1.7.252.jar) 
+	UCHIJAAAA	MekanismGenerators{8.1.7} [MekanismGenerators] (MekanismGenerators-1.7.10-8.1.7.252.jar) 
+	UCHIJAAAA	MekanismTools{8.1.7} [MekanismTools] (MekanismTools-1.7.10-8.1.7.252.jar) 
+	UCHIJAAAA	MineTweaker3{3.0.10} [MineTweaker 3] (MineTweaker3-1.7.10-3.0.10B.jar) 
+	UCHIJAAAA	modtweaker2{0.9.2} [Mod Tweaker 2] (ModTweaker2-0.9.3.jar) 
+	UCHIJAAAA	harvestcraft{1.7.10j} [Pam's HarvestCraft] (Pam's HarvestCraft 1.7.10j.jar) 
+	UCHIJAAAA	reccomplex{0.9.6.3} [Recurrent Complex] (RecurrentComplex-0.9.6.3.jar) 
+	UCHIJAAAA	ResourceLoader{1.2} [Resource Loader] (ResourceLoader-1.2.jar) 
+	UCHIJAAAA	weather2{v2.3.9} [Localized Weather & Storms] (weather2-2.3.9 for MC v1.7.10.jar) 
+	UCHIJAAAA	WR-CBE|Core{1.4.1.9} [WR-CBE Core] (WR-CBE-1.7.10-1.4.1.9-universal.jar) 
+	UCHIJAAAA	WR-CBE|Addons{1.4.1.9} [WR-CBE Addons] (WR-CBE-1.7.10-1.4.1.9-universal.jar) 
+	UCHIJAAAA	WR-CBE|Logic{1.4.1.9} [WR-CBE Logic] (WR-CBE-1.7.10-1.4.1.9-universal.jar) 
+	UCHIJAAAA	Baubles{1.0.1.10} [Baubles] (Baubles-1.7.10-1.0.1.10.jar) 
+	UCHIJAAAA	McMultipart{1.2.0.345} [Minecraft Multipart Plugin] (ForgeMultipart-1.7.10-1.2.0.345-universal.jar) 
+	UCHIJAAAA	ForgeMicroblock{1.2.0.345} [Forge Microblocks] (ForgeMultipart-1.7.10-1.2.0.345-universal.jar) 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	AE2 Version: stable rv2-stable-10 for Forge 10.13.2.1291
+	List of loaded APIs: 
+		* appliedenergistics2|API (rv2) from appliedenergistics2-rv2-stable-10.jar
+		* Baubles|API (1.0.1.10) from Baubles-1.7.10-1.0.1.10.jar
+		* BuildCraftAPI|tools (1.0) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ChiselAPI (0.1.1) from Chisel-2.9.1.7.jar
+		* ChiselAPI|Carving (0.1.1) from Chisel-2.9.1.7.jar
+		* ChiselAPI|Rendering (0.1.1) from Chisel-2.9.1.7.jar
+		* CoFHAPI (1.7.10R1.0.13) from EnderIO-1.7.10-2.3.0.415_beta.jar
+		* CoFHAPI|block (1.7.10R1.0.13) from EnderIO-1.7.10-2.3.0.415_beta.jar
+		* CoFHAPI|energy (1.7.10R1.0.2) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* CoFHAPI|inventory (1.7.10R1.0.13) from EnderIO-1.7.10-2.3.0.415_beta.jar
+		* CoFHAPI|item (1.7.10R1.0.13) from EnderIO-1.7.10-2.3.0.415_beta.jar
+		* CoFHAPI|tileentity (1.7.10R1.0.13) from EnderIO-1.7.10-2.3.0.415_beta.jar
+		* CoFHAPI|transport (1.7.10R1.0.13) from EnderIO-1.7.10-2.3.0.415_beta.jar
+		* EnderIOAPI (0.0.2) from EnderIO-1.7.10-2.3.0.415_beta.jar
+		* EnderIOAPI|Redstone (0.0.2) from EnderIO-1.7.10-2.3.0.415_beta.jar
+		* EnderIOAPI|Teleport (0.0.2) from EnderIO-1.7.10-2.3.0.415_beta.jar
+		* EnderIOAPI|Tools (0.0.2) from EnderIO-1.7.10-2.3.0.415_beta.jar
+		* ForestryAPI|apiculture (3.5.0) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ForestryAPI|arboriculture (2.3.0) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ForestryAPI|circuits (2.0.0) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ForestryAPI|core (3.2.0) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ForestryAPI|farming (1.1.0) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ForestryAPI|food (1.1.0) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ForestryAPI|fuels (2.0.1) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ForestryAPI|genetics (3.3.0) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ForestryAPI|hives (4.1.0) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ForestryAPI|lepidopterology (1.1) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ForestryAPI|mail (3.0.0) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ForestryAPI|recipes (3.1.0) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ForestryAPI|storage (3.0.0) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* ForestryAPI|world (1.1.0) from forestry_1.7.10-3.6.0.594-unstable.jar
+		* Galacticraft API (1.0) from GalacticraftCore-1.7-3.0.12.357.jar
+		* gendustryAPI (2.2.0) from gendustry-1.6.0.125-mc1.7.10.jar
+		* IC2API (1.0) from industrialcraft-2-2.2.780-experimental.jar
+		* MekanismAPI|core (8.0.0) from Mekanism-1.7.10-8.1.7.252.jar
+		* MekanismAPI|energy (8.0.0) from Mekanism-1.7.10-8.1.7.252.jar
+		* MekanismAPI|gas (8.0.0) from Mekanism-1.7.10-8.1.7.252.jar
+		* MekanismAPI|infuse (8.0.0) from Mekanism-1.7.10-8.1.7.252.jar
+		* MekanismAPI|laser (8.0.0) from Mekanism-1.7.10-8.1.7.252.jar
+		* MekanismAPI|reactor (8.0.0) from Mekanism-1.7.10-8.1.7.252.jar
+		* MekanismAPI|recipe (8.0.0) from Mekanism-1.7.10-8.1.7.252.jar
+		* MekanismAPI|transmitter (8.0.0) from Mekanism-1.7.10-8.1.7.252.jar
+		* MekanismAPI|util (8.0.0) from Mekanism-1.7.10-8.1.7.252.jar
+		* Thaumcraft|API (4.2.0.0) from Pam's HarvestCraft 1.7.10j.jar
+	AE2 Integration: IC2:ON, RotaryCraft:OFF, RC:OFF, BC:OFF, RF:ON, RFItem:ON, MFR:OFF, DSU:ON, FZ:OFF, FMP:ON, RB:OFF, CLApi:OFF, Waila:OFF, InvTweaks:OFF, NEI:ON, CraftGuide:OFF, Mekanism:ON, ImmibisMicroblocks:OFF, BetterStorage:OFF
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Player Count: 0 / 8; []
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
